@@ -22,6 +22,7 @@ class View {
     private Button emptyButton = new Button();
     private List<Button> buttonList = new ArrayList<>();
 
+
     View(Stage primaryStage) {
         primaryStage.setTitle("Puzzle");
         createButtons();
@@ -56,7 +57,9 @@ class View {
         int index = 0;
         for(int i = 0; i < 4; ++i)
             for(int j = 0; j < 4; ++j) {
-                gridPane.add(buttonList.get(index++), j, i);
+                int number = index++;
+
+                gridPane.add(buttonList.get(number), j, i);
         }
         goButton.setPrefSize(BUTTONSIZE*4, BUTTONSIZE);
         gridPane.add(goButton, 0, 5, 4, 1);
